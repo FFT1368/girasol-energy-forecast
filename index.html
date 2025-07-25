@@ -330,19 +330,24 @@
             display: flex;
             align-items: center;
             gap: 2rem;
-            padding: 2rem;
+            padding: 2.5rem;
             background: var(--gradient-3);
             cursor: pointer;
             position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .service-header:hover {
+            background: linear-gradient(180deg, rgba(26,84,144,0.08) 0%, rgba(244,182,67,0.08) 100%);
         }
         
         .service-header::after {
             content: '▼';
             position: absolute;
-            right: 2rem;
+            right: 2.5rem;
             top: 50%;
             transform: translateY(-50%);
-            font-size: 20px;
+            font-size: 24px;
             color: var(--primary-blue);
             transition: transform 0.3s ease;
         }
@@ -352,13 +357,19 @@
         }
         
         .service-icon {
-            width: 80px;
-            height: 80px;
+            width: 120px;
+            height: 120px;
             flex-shrink: 0;
             background: var(--white);
-            border-radius: 16px;
-            padding: 15px;
-            box-shadow: var(--shadow-sm);
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s ease;
+        }
+        
+        .service-header:hover .service-icon {
+            transform: scale(1.05);
+            box-shadow: var(--shadow-lg);
         }
         
         .service-title-section {
@@ -366,7 +377,7 @@
         }
         
         .service-card h3 {
-            font-size: 1.75rem;
+            font-size: 2rem;
             font-weight: 600;
             margin-bottom: 0.5rem;
             color: var(--primary-blue);
@@ -374,7 +385,8 @@
         
         .service-card .service-summary {
             color: var(--text-light);
-            font-size: 16px;
+            font-size: 17px;
+            line-height: 1.6;
         }
         
         .service-details {
@@ -385,30 +397,30 @@
         }
         
         .service-card.expanded .service-details {
-            max-height: 1000px;
+            max-height: 2000px;
         }
         
         .service-details-content {
-            padding: 2rem;
+            padding: 3rem;
             border-top: 1px solid rgba(0,0,0,0.08);
         }
         
         .capability-section {
-            margin-bottom: 2rem;
-            padding: 1.5rem;
+            margin-bottom: 2.5rem;
+            padding: 2rem;
             background: var(--bg-ultra-light);
-            border-radius: 12px;
-            border-left: 4px solid var(--primary-gold);
+            border-radius: 15px;
+            border-left: 5px solid var(--primary-gold);
         }
         
         .capability-section h4 {
-            font-size: 1.1rem;
+            font-size: 1.3rem;
             color: var(--text-dark);
-            margin-bottom: 1rem;
+            margin-bottom: 1.2rem;
             font-weight: 600;
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
         }
         
         .capability-list {
@@ -417,29 +429,30 @@
         }
         
         .capability-list li {
-            padding: 0.5rem 0;
-            padding-left: 1.5rem;
+            padding: 0.6rem 0;
+            padding-left: 2rem;
             position: relative;
             color: var(--text-light);
-            font-size: 14px;
-            line-height: 1.6;
+            font-size: 16px;
+            line-height: 1.7;
         }
         
         .capability-list li::before {
             content: '•';
             position: absolute;
-            left: 0.5rem;
+            left: 0.7rem;
             color: var(--primary-blue);
             font-weight: bold;
+            font-size: 20px;
         }
         
         .sub-list {
-            margin-left: 1rem;
-            margin-top: 0.3rem;
-            padding: 0.3rem;
-            background: rgba(244, 182, 67, 0.05);
-            border-radius: 6px;
-            font-size: 13px;
+            margin-left: 1.5rem;
+            margin-top: 0.5rem;
+            padding: 0.8rem;
+            background: rgba(244, 182, 67, 0.08);
+            border-radius: 8px;
+            font-size: 15px;
         }
         
         .sub-list li::before {
@@ -447,22 +460,28 @@
             color: var(--primary-gold);
         }
         
-        .expand-btn {
-            display: inline-block;
-            margin-top: 1rem;
-            padding: 10px 20px;
-            background: var(--gradient-2);
-            color: var(--dark-blue);
-            border-radius: 20px;
-            font-size: 14px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s ease;
+        /* Special styling for regional analysis dashboard */
+        .dashboard-image-container {
+            margin-top: 3rem;
+            text-align: center;
+            padding: 2rem;
+            background: var(--gradient-3);
+            border-radius: 15px;
         }
         
-        .expand-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-md);
+        .dashboard-image-container img {
+            width: 100%;
+            max-width: 700px;
+            border-radius: 12px;
+            box-shadow: var(--shadow-xl);
+            border: 1px solid rgba(0,0,0,0.1);
+        }
+        
+        .dashboard-image-container p {
+            margin-top: 1.5rem;
+            color: var(--text-light);
+            font-size: 16px;
+            font-style: italic;
         }
         
         /* Enhanced Service Details */
@@ -1344,9 +1363,9 @@
                                     <li>Advanced PVHMS health monitoring analysis for power plants health & performance evaluations</li>
                                 </ul>
                             </div>
-                            <div style="margin-top: 2rem; text-align: center;">
-                                <img src="regional-dashboard.png" alt="Regional Analysis Dashboard" style="width: 100%; max-width: 600px; border-radius: 12px; box-shadow: var(--shadow-lg);">
-                                <p style="margin-top: 1rem; color: var(--text-light); font-size: 14px;">Comprehensive Analytics Dashboard</p>
+                            <div class="dashboard-image-container">
+                                <img src="regional-dashboard.png" alt="Regional Analysis Dashboard">
+                                <p>Comprehensive Analytics Dashboard - Real-time monitoring and analysis</p>
                             </div>
                         </div>
                     </div>
@@ -1627,6 +1646,24 @@
                     submitButton.disabled = false;
                 }, 1500);
             });
+        }
+        
+        // Toggle service card expansion
+        function toggleService(cardId) {
+            const card = document.getElementById(cardId);
+            if (card) {
+                card.classList.toggle('expanded');
+                // Close other cards
+                document.querySelectorAll('.service-card').forEach(otherCard => {
+                    if (otherCard.id !== cardId) {
+                        otherCard.classList.remove('expanded');
+                    }
+                });
+                // Scroll to the card
+                setTimeout(() => {
+                    card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }, 300);
+            }
         }
         
         // Add parallax effect to hero section
