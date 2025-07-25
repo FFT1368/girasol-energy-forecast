@@ -13,54 +13,37 @@
         }
         
         :root {
-            --primary-blue: #1a5490;
-            --primary-gold: #f4b643;
-            --dark-blue: #0d2844;
-            --light-blue: #4a90e2;
-            --text-dark: #2c3e50;
-            --text-light: #6c757d;
-            --bg-light: #f8f9fa;
-            --bg-ultra-light: #fafbfc;
+            --primary-blue: #0052cc;
+            --primary-gold: #ffc107;
+            --dark-blue: #001e4d;
+            --light-blue: #e3f2fd;
+            --text-dark: #1a1a1a;
+            --text-light: #5a5a5a;
+            --bg-light: #f5f7fa;
+            --bg-section: #ffffff;
             --white: #ffffff;
-            --shadow-sm: 0 2px 4px rgba(0,0,0,0.08);
-            --shadow-md: 0 4px 12px rgba(0,0,0,0.1);
-            --shadow-lg: 0 8px 24px rgba(0,0,0,0.12);
-            --shadow-xl: 0 12px 48px rgba(0,0,0,0.15);
-            --gradient-1: linear-gradient(135deg, #1a5490 0%, #2e6eb8 100%);
-            --gradient-2: linear-gradient(135deg, #f4b643 0%, #ffd23f 100%);
-            --gradient-3: linear-gradient(180deg, rgba(26,84,144,0.05) 0%, rgba(244,182,67,0.05) 100%);
+            --shadow-sm: 0 2px 8px rgba(0,0,0,0.1);
+            --shadow-md: 0 4px 16px rgba(0,0,0,0.1);
+            --shadow-lg: 0 8px 32px rgba(0,0,0,0.12);
+            --gradient-blue: linear-gradient(135deg, #0052cc 0%, #0066ff 100%);
+            --gradient-gold: linear-gradient(135deg, #ffc107 0%, #ffca28 100%);
         }
         
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', Arial, sans-serif;
             line-height: 1.6;
             color: var(--text-dark);
-            overflow-x: hidden;
-            background: var(--bg-ultra-light);
+            background: var(--bg-light);
         }
         
-        /* Professional Typography */
-        h1, h2, h3, h4, h5, h6 {
-            font-weight: 600;
-            line-height: 1.2;
-            color: var(--text-dark);
-        }
-        
-        /* Enhanced Navigation */
+        /* Navigation */
         nav {
-            background: rgba(255, 255, 255, 0.98);
-            backdrop-filter: blur(20px);
+            background: var(--white);
             box-shadow: var(--shadow-sm);
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            transition: all 0.3s ease;
-        }
-        
-        nav.scrolled {
-            box-shadow: var(--shadow-md);
-            background: rgba(255, 255, 255, 0.95);
         }
         
         .nav-container {
@@ -72,213 +55,103 @@
             align-items: center;
         }
         
-        .logo-container {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-        
         .company-logo {
-            height: 45px;
+            height: 50px;
             width: auto;
-            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
         }
         
         .nav-links {
             display: flex;
             list-style: none;
-            gap: 2.5rem;
+            gap: 2rem;
         }
         
         .nav-links a {
             text-decoration: none;
             color: var(--text-dark);
             font-weight: 500;
-            font-size: 15px;
-            letter-spacing: 0.3px;
-            transition: all 0.3s ease;
-            position: relative;
+            transition: color 0.3s ease;
         }
         
         .nav-links a:hover {
             color: var(--primary-blue);
         }
         
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -8px;
-            left: 50%;
-            width: 0;
-            height: 3px;
-            background: var(--gradient-2);
-            transition: all 0.3s ease;
-            transform: translateX(-50%);
-            border-radius: 2px;
-        }
-        
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-        
-        /* Professional Hero Section */
+        /* Hero Section */
         .hero {
-            background: var(--gradient-1);
+            background: var(--gradient-blue);
             color: var(--white);
-            padding: 140px 0 100px;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff10" fill-opacity="1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,138.7C960,139,1056,117,1152,101.3C1248,85,1344,75,1392,69.3L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
-            background-size: cover;
-            background-position: bottom;
-        }
-        
-        .hero-pattern {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            opacity: 0.05;
-            background-image: 
-                radial-gradient(circle at 20% 80%, var(--primary-gold) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, var(--light-blue) 0%, transparent 50%),
-                radial-gradient(circle at 40% 40%, var(--white) 0%, transparent 50%);
+            padding: 120px 0 80px;
+            text-align: center;
         }
         
         .hero-content {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 2rem;
-            position: relative;
-            z-index: 1;
-            text-align: center;
         }
         
         .ai-logo {
-            width: 160px;
-            height: 160px;
-            margin: 0 auto 40px;
+            width: 200px;
+            height: 200px;
+            margin: 0 auto 2rem;
             background: rgba(255, 255, 255, 0.1);
             border-radius: 50%;
-            padding: 20px;
+            padding: 30px;
             backdrop-filter: blur(10px);
-            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
-            animation: float-rotate 20s ease-in-out infinite;
-        }
-        
-        @keyframes float-rotate {
-            0%, 100% { 
-                transform: translateY(0) rotate(0deg);
-            }
-            25% { 
-                transform: translateY(-10px) rotate(5deg);
-            }
-            50% { 
-                transform: translateY(0) rotate(0deg);
-            }
-            75% { 
-                transform: translateY(-10px) rotate(-5deg);
-            }
         }
         
         .hero h1 {
-            font-size: 3.5rem;
+            font-size: 3rem;
+            margin-bottom: 1rem;
             font-weight: 700;
-            margin-bottom: 1.5rem;
-            letter-spacing: -1px;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            animation: fadeInUp 0.8s ease-out;
         }
         
         .hero p {
             font-size: 1.5rem;
-            margin-bottom: 3rem;
-            opacity: 0.95;
-            font-weight: 300;
-            letter-spacing: 0.5px;
-            animation: fadeInUp 0.8s ease-out 0.2s both;
-        }
-        
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            margin-bottom: 2rem;
+            opacity: 0.9;
         }
         
         .hero-buttons {
             display: flex;
-            gap: 1.5rem;
+            gap: 1rem;
             justify-content: center;
-            animation: fadeInUp 0.8s ease-out 0.4s both;
         }
         
         .btn {
-            padding: 16px 40px;
+            padding: 15px 35px;
             text-decoration: none;
             border-radius: 30px;
             font-weight: 600;
-            font-size: 16px;
-            letter-spacing: 0.5px;
             transition: all 0.3s ease;
-            display: inline-block;
-            position: relative;
-            overflow: hidden;
         }
         
         .btn-primary {
-            background: var(--gradient-2);
-            color: var(--dark-blue);
-            box-shadow: 0 4px 15px rgba(244, 182, 67, 0.3);
+            background: var(--gradient-gold);
+            color: var(--text-dark);
         }
         
         .btn-primary:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(244, 182, 67, 0.4);
+            box-shadow: var(--shadow-lg);
         }
         
         .btn-secondary {
             background: transparent;
             color: var(--white);
-            border: 2px solid rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(10px);
+            border: 2px solid var(--white);
         }
         
         .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: var(--white);
-            transform: translateY(-2px);
-        }
-        
-        /* Professional Services Section */
-        .services {
-            padding: 100px 0;
             background: var(--white);
-            position: relative;
+            color: var(--primary-blue);
         }
         
-        .services::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, var(--primary-gold), transparent);
+        /* Services Section */
+        .services {
+            padding: 80px 0;
+            background: var(--bg-section);
         }
         
         .container {
@@ -289,554 +162,166 @@
         
         .section-title {
             text-align: center;
-            font-size: 2.75rem;
-            font-weight: 700;
+            font-size: 2.5rem;
             margin-bottom: 1rem;
             color: var(--text-dark);
-            letter-spacing: -0.5px;
         }
         
         .section-subtitle {
             text-align: center;
-            font-size: 1.25rem;
+            font-size: 1.2rem;
             color: var(--text-light);
-            margin-bottom: 4rem;
-            font-weight: 400;
+            margin-bottom: 3rem;
         }
         
         .services-grid {
             display: grid;
-            grid-template-columns: 1fr;
-            gap: 2rem;
-            max-width: 1000px;
-            margin: 0 auto;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
         }
         
         .service-card {
             background: var(--white);
             border-radius: 20px;
-            overflow: hidden;
-            border: 1px solid rgba(0,0,0,0.08);
+            padding: 3rem 2rem;
+            text-align: center;
             box-shadow: var(--shadow-md);
             transition: all 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+            display: block;
+            border: 2px solid transparent;
         }
         
         .service-card:hover {
-            box-shadow: var(--shadow-xl);
-            transform: translateY(-5px);
-        }
-        
-        .service-header {
-            display: flex;
-            align-items: center;
-            gap: 2rem;
-            padding: 2.5rem;
-            background: var(--gradient-3);
-            cursor: pointer;
-            position: relative;
-            transition: all 0.3s ease;
-        }
-        
-        .service-header:hover {
-            background: linear-gradient(180deg, rgba(26,84,144,0.08) 0%, rgba(244,182,67,0.08) 100%);
-        }
-        
-        .service-header::after {
-            content: '▼';
-            position: absolute;
-            right: 2.5rem;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 24px;
-            color: var(--primary-blue);
-            transition: transform 0.3s ease;
-        }
-        
-        .service-card.expanded .service-header::after {
-            transform: translateY(-50%) rotate(180deg);
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary-gold);
         }
         
         .service-icon {
-            width: 120px;
-            height: 120px;
-            flex-shrink: 0;
-            background: var(--white);
-            border-radius: 20px;
-            padding: 20px;
-            box-shadow: var(--shadow-md);
-            transition: all 0.3s ease;
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 2rem;
+            padding: 25px;
+            background: var(--light-blue);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         
-        .service-header:hover .service-icon {
-            transform: scale(1.05);
-            box-shadow: var(--shadow-lg);
-        }
-        
-        .service-title-section {
-            flex: 1;
+        .service-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
         }
         
         .service-card h3 {
-            font-size: 2rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            color: var(--primary-blue);
-        }
-        
-        .service-card .service-summary {
-            color: var(--text-light);
-            font-size: 17px;
-            line-height: 1.6;
-        }
-        
-        .service-details {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.5s ease;
-            background: var(--white);
-        }
-        
-        .service-card.expanded .service-details {
-            max-height: 2000px;
-        }
-        
-        .service-details-content {
-            padding: 3rem;
-            border-top: 1px solid rgba(0,0,0,0.08);
-        }
-        
-        .capability-section {
-            margin-bottom: 2.5rem;
-            padding: 2rem;
-            background: var(--bg-ultra-light);
-            border-radius: 15px;
-            border-left: 5px solid var(--primary-gold);
-        }
-        
-        .capability-section h4 {
-            font-size: 1.3rem;
-            color: var(--text-dark);
-            margin-bottom: 1.2rem;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .capability-list {
-            list-style: none;
-            padding: 0;
-        }
-        
-        .capability-list li {
-            padding: 0.6rem 0;
-            padding-left: 2rem;
-            position: relative;
-            color: var(--text-light);
-            font-size: 16px;
-            line-height: 1.7;
-        }
-        
-        .capability-list li::before {
-            content: '•';
-            position: absolute;
-            left: 0.7rem;
-            color: var(--primary-blue);
-            font-weight: bold;
-            font-size: 20px;
-        }
-        
-        .sub-list {
-            margin-left: 1.5rem;
-            margin-top: 0.5rem;
-            padding: 0.8rem;
-            background: rgba(244, 182, 67, 0.08);
-            border-radius: 8px;
-            font-size: 15px;
-        }
-        
-        .sub-list li::before {
-            content: '-';
-            color: var(--primary-gold);
-        }
-        
-        /* Special styling for regional analysis dashboard */
-        .dashboard-image-container {
-            margin-top: 3rem;
-            text-align: center;
-            padding: 2rem;
-            background: var(--gradient-3);
-            border-radius: 15px;
-        }
-        
-        .dashboard-image-container img {
-            width: 100%;
-            max-width: 700px;
-            border-radius: 12px;
-            box-shadow: var(--shadow-xl);
-            border: 1px solid rgba(0,0,0,0.1);
-        }
-        
-        .dashboard-image-container p {
-            margin-top: 1.5rem;
-            color: var(--text-light);
-            font-size: 16px;
-            font-style: italic;
-        }
-        
-        /* Enhanced Service Details */
-        .service-details {
-            padding: 80px 0;
-            background: var(--bg-ultra-light);
-        }
-        
-        .service-detail {
-            margin-bottom: 100px;
-            scroll-margin-top: 100px;
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.6s ease;
-        }
-        
-        .service-detail.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        .detail-card {
-            background: var(--white);
-            border-radius: 20px;
-            padding: 60px;
-            box-shadow: var(--shadow-lg);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .detail-card::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -50%;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle, var(--primary-gold) 0%, transparent 70%);
-            opacity: 0.05;
-        }
-        
-        .detail-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .detail-text h3 {
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-            color: var(--primary-blue);
-            font-weight: 700;
-        }
-        
-        .capability-section {
-            margin: 2rem 0;
-            padding: 1.5rem;
-            background: var(--bg-ultra-light);
-            border-radius: 12px;
-            border-left: 4px solid var(--primary-gold);
-        }
-        
-        .capability-section h4 {
-            font-size: 1.25rem;
-            color: var(--text-dark);
+            font-size: 1.8rem;
             margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-weight: 600;
+            color: var(--primary-blue);
         }
         
-        .capability-list {
-            list-style: none;
-            padding-left: 0;
-        }
-        
-        .capability-list li {
-            padding: 0.5rem 0;
-            padding-left: 2rem;
-            position: relative;
+        .service-card p {
             color: var(--text-light);
-            font-size: 15px;
             line-height: 1.8;
+            font-size: 16px;
         }
         
-        .capability-list li::before {
-            content: '→';
-            position: absolute;
-            left: 0.5rem;
-            color: var(--primary-blue);
-            font-weight: bold;
-        }
-        
-        .sub-list {
-            margin-left: 1.5rem;
-            margin-top: 0.5rem;
-            padding: 0.5rem;
-            background: rgba(244, 182, 67, 0.05);
-            border-radius: 8px;
-        }
-        
-        .sub-list li::before {
-            content: '◇';
-            color: var(--primary-gold);
-        }
-        
-        .detail-visual {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-        }
-        
-        .service-visual-wrapper {
-            position: relative;
-            padding: 40px;
-            background: var(--gradient-3);
-            border-radius: 50%;
-            animation: pulse-glow 3s ease-in-out infinite;
-        }
-        
-        @keyframes pulse-glow {
-            0%, 100% {
-                box-shadow: 0 0 0 0 rgba(244, 182, 67, 0.4);
-            }
-            50% {
-                box-shadow: 0 0 0 20px rgba(244, 182, 67, 0);
-            }
-        }
-        
-        .service-visual-icon {
-            width: 200px;
-            height: 200px;
-            filter: drop-shadow(0 10px 20px rgba(0,0,0,0.1));
-        }
-        
-        /* Dashboard Preview */
-        .dashboard-preview {
-            margin-top: 60px;
-            padding: 40px;
-            background: var(--gradient-3);
-            border-radius: 20px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .dashboard-preview::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect x="0" y="0" width="100" height="100" fill="none" stroke="%23e0e0e0" stroke-width="0.5"/><rect x="25" y="25" width="50" height="50" fill="none" stroke="%23e0e0e0" stroke-width="0.5"/></svg>');
-            opacity: 0.1;
-        }
-        
-        .dashboard-preview h4 {
-            font-size: 1.5rem;
-            color: var(--primary-blue);
-            margin-bottom: 2rem;
-            font-weight: 600;
-        }
-        
-        .dashboard-preview img {
-            width: 100%;
-            max-width: 900px;
-            border-radius: 12px;
-            box-shadow: var(--shadow-xl);
-            border: 1px solid rgba(0,0,0,0.1);
-            position: relative;
-            z-index: 1;
-        }
-        
-        /* Enhanced Technology Section */
+        /* Technology Section */
         .technology {
-            padding: 100px 0;
-            background: var(--white);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .technology::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 800px;
-            height: 800px;
-            background: radial-gradient(circle, var(--primary-blue) 0%, transparent 70%);
-            opacity: 0.02;
-            transform: translate(-50%, -50%);
+            padding: 80px 0;
+            background: var(--bg-light);
         }
         
         .tech-features {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 2rem;
-            margin-top: 4rem;
+            margin-top: 3rem;
         }
         
         .tech-item {
-            background: var(--bg-ultra-light);
-            padding: 2.5rem;
-            border-radius: 16px;
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow-sm);
             transition: all 0.3s ease;
-            border: 1px solid transparent;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .tech-item::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 4px;
-            height: 0;
-            background: var(--gradient-2);
-            transition: height 0.3s ease;
-        }
-        
-        .tech-item:hover::before {
-            height: 100%;
         }
         
         .tech-item:hover {
             transform: translateY(-5px);
-            box-shadow: var(--shadow-lg);
-            background: var(--white);
-            border-color: rgba(244, 182, 67, 0.2);
+            box-shadow: var(--shadow-md);
         }
         
         .tech-item h4 {
             color: var(--primary-blue);
-            font-size: 1.25rem;
+            font-size: 1.3rem;
             margin-bottom: 1rem;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 10px;
         }
         
-        .tech-item p {
-            color: var(--text-light);
-            line-height: 1.8;
-            font-size: 15px;
-        }
-        
-        /* Professional CTA Section */
+        /* CTA Section */
         .cta-section {
-            background: var(--gradient-1);
-            padding: 100px 0;
+            background: var(--gradient-blue);
+            padding: 80px 0;
             text-align: center;
             color: var(--white);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .cta-section::before {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 200px;
-            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 200"><path fill="%23ffffff10" fill-opacity="1" d="M0,32L48,37.3C96,43,192,53,288,80C384,107,480,149,576,154.7C672,160,768,128,864,112C960,96,1056,96,1152,112C1248,128,1344,160,1392,176L1440,192L1440,200L1392,200C1344,200,1248,200,1152,200C1056,200,960,200,864,200C768,200,672,200,576,200C480,200,384,200,288,200C192,200,96,200,48,200L0,200Z"></path></svg>');
-            background-size: cover;
         }
         
         .cta-section h2 {
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
-            font-weight: 700;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            position: relative;
-            z-index: 1;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
         }
         
         .cta-section p {
-            font-size: 1.5rem;
-            margin-bottom: 3rem;
-            opacity: 0.95;
-            font-weight: 300;
-            position: relative;
-            z-index: 1;
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
         }
         
-        /* Enhanced Contact Section */
+        /* Contact Section */
         .contact {
-            padding: 100px 0;
-            background: var(--bg-ultra-light);
+            padding: 80px 0;
+            background: var(--bg-section);
         }
         
         .contact-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            margin-top: 4rem;
-        }
-        
-        .contact-info {
-            background: var(--white);
-            padding: 3rem;
-            border-radius: 20px;
-            box-shadow: var(--shadow-md);
+            gap: 4rem;
+            margin-top: 3rem;
         }
         
         .contact-info h3 {
             font-size: 2rem;
             margin-bottom: 2rem;
             color: var(--primary-blue);
-            font-weight: 600;
         }
         
         .contact-item {
             display: flex;
-            align-items: flex-start;
+            align-items: center;
             gap: 1rem;
-            margin-bottom: 2rem;
-            padding: 1rem;
-            background: var(--bg-ultra-light);
-            border-radius: 12px;
-            transition: all 0.3s ease;
-        }
-        
-        .contact-item:hover {
-            background: var(--gradient-3);
-            transform: translateX(5px);
+            margin-bottom: 1.5rem;
         }
         
         .contact-icon {
             width: 50px;
             height: 50px;
-            background: var(--gradient-2);
-            border-radius: 12px;
+            background: var(--gradient-gold);
+            border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--white);
+            color: var(--text-dark);
             font-size: 24px;
-            flex-shrink: 0;
-            box-shadow: var(--shadow-sm);
         }
         
         .contact-form {
-            background: var(--white);
+            background: var(--bg-light);
             padding: 3rem;
             border-radius: 20px;
-            box-shadow: var(--shadow-md);
         }
         
         .form-group {
@@ -848,73 +333,49 @@
             margin-bottom: 0.5rem;
             color: var(--text-dark);
             font-weight: 600;
-            font-size: 14px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
         }
         
         .form-group input,
         .form-group select,
         .form-group textarea {
             width: 100%;
-            padding: 14px 18px;
-            border: 2px solid rgba(0,0,0,0.08);
+            padding: 12px;
+            border: 2px solid #e0e0e0;
             border-radius: 10px;
             font-size: 16px;
-            transition: all 0.3s ease;
-            background: var(--bg-ultra-light);
+            transition: border-color 0.3s ease;
         }
         
         .form-group input:focus,
         .form-group select:focus,
         .form-group textarea:focus {
             outline: none;
-            border-color: var(--primary-gold);
-            background: var(--white);
-            box-shadow: 0 0 0 4px rgba(244, 182, 67, 0.1);
-        }
-        
-        .form-group textarea {
-            resize: vertical;
-            min-height: 120px;
+            border-color: var(--primary-blue);
         }
         
         .form-submit {
-            background: var(--gradient-2);
-            color: var(--dark-blue);
+            background: var(--gradient-gold);
+            color: var(--text-dark);
             border: none;
-            padding: 16px 40px;
+            padding: 15px 40px;
             border-radius: 30px;
             font-size: 16px;
             font-weight: 600;
             cursor: pointer;
-            transition: all 0.3s ease;
             width: 100%;
-            letter-spacing: 0.5px;
-            box-shadow: var(--shadow-md);
+            transition: all 0.3s ease;
         }
         
         .form-submit:hover {
             transform: translateY(-2px);
-            box-shadow: var(--shadow-lg);
+            box-shadow: var(--shadow-md);
         }
         
-        /* Professional Footer */
+        /* Footer */
         footer {
             background: var(--dark-blue);
             color: var(--white);
-            padding: 80px 0 30px;
-            position: relative;
-        }
-        
-        footer::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, var(--primary-gold), transparent);
+            padding: 60px 0 30px;
         }
         
         .footer-content {
@@ -922,67 +383,43 @@
             margin: 0 auto;
             padding: 0 2rem;
             display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1fr;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 3rem;
-            margin-bottom: 3rem;
+            margin-bottom: 2rem;
         }
         
         .footer-section h4 {
             color: var(--primary-gold);
-            margin-bottom: 1.5rem;
-            font-size: 1.25rem;
-            font-weight: 600;
-            letter-spacing: 0.5px;
+            margin-bottom: 1rem;
         }
         
         .footer-section ul {
             list-style: none;
         }
         
-        .footer-section ul li {
-            margin-bottom: 0.75rem;
-        }
-        
         .footer-section a {
             color: rgba(255, 255, 255, 0.8);
             text-decoration: none;
-            transition: all 0.3s ease;
-            font-size: 15px;
+            transition: color 0.3s ease;
         }
         
         .footer-section a:hover {
-            color: var(--white);
-            padding-left: 5px;
-        }
-        
-        .footer-logo {
-            width: 220px;
-            margin-bottom: 1.5rem;
-            filter: brightness(0) invert(1);
-            opacity: 0.9;
-        }
-        
-        .footer-description {
-            color: rgba(255, 255, 255, 0.7);
-            line-height: 1.8;
-            font-size: 15px;
+            color: var(--primary-gold);
         }
         
         .footer-bottom {
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
             text-align: center;
             padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
             color: rgba(255, 255, 255, 0.6);
-            font-size: 14px;
         }
         
-        /* Mobile Responsive Enhancements */
+        /* Mobile Menu */
         .mobile-menu {
             display: none;
             flex-direction: column;
             gap: 4px;
             cursor: pointer;
-            padding: 5px;
         }
         
         .mobile-menu span {
@@ -990,22 +427,8 @@
             height: 3px;
             background: var(--text-dark);
             transition: all 0.3s ease;
-            border-radius: 2px;
         }
         
-        .mobile-menu.active span:nth-child(1) {
-            transform: rotate(45deg) translate(5px, 5px);
-        }
-        
-        .mobile-menu.active span:nth-child(2) {
-            opacity: 0;
-        }
-        
-        .mobile-menu.active span:nth-child(3) {
-            transform: rotate(-45deg) translate(7px, -6px);
-        }
-        
-        /* Responsive Design */
         @media (max-width: 768px) {
             .nav-links {
                 position: fixed;
@@ -1018,7 +441,6 @@
                 transition: 0.3s;
                 box-shadow: var(--shadow-lg);
                 padding: 2rem 0;
-                backdrop-filter: blur(20px);
             }
             
             .nav-links.active {
@@ -1030,127 +452,26 @@
             }
             
             .hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .hero p {
-                font-size: 1.2rem;
-            }
-            
-            .hero-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .detail-content,
-            .contact-content {
-                grid-template-columns: 1fr;
+                font-size: 2rem;
             }
             
             .services-grid {
                 grid-template-columns: 1fr;
             }
             
-            .detail-visual {
-                order: -1;
-            }
-            
-            .footer-content {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-            
-            .tech-features {
+            .contact-content {
                 grid-template-columns: 1fr;
             }
-            
-            .detail-card {
-                padding: 40px 30px;
-            }
-        }
-        
-        /* Professional Animations */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        .fade-in-left {
-            opacity: 0;
-            transform: translateX(-30px);
-            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        
-        .fade-in-left.visible {
-            opacity: 1;
-            transform: translateX(0);
-        }
-        
-        .fade-in-right {
-            opacity: 0;
-            transform: translateX(30px);
-            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        
-        .fade-in-right.visible {
-            opacity: 1;
-            transform: translateX(0);
-        }
-        
-        /* Loading Animation */
-        .loading-animation {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: var(--white);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-            transition: opacity 0.5s ease;
-        }
-        
-        .loading-animation.hidden {
-            opacity: 0;
-            pointer-events: none;
-        }
-        
-        .loader {
-            width: 60px;
-            height: 60px;
-            border: 3px solid var(--bg-light);
-            border-top-color: var(--primary-gold);
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-        }
-        
-        @keyframes spin {
-            to { transform: rotate(360deg); }
         }
     </style>
 </head>
 <body>
-    <!-- Loading Animation -->
-    <div class="loading-animation" id="loader">
-        <div class="loader"></div>
-    </div>
-    
     <!-- Navigation -->
-    <nav id="navbar">
+    <nav>
         <div class="nav-container">
-            <div class="logo-container">
-                <img src="girasol-logo.png" alt="Girasol Energy" class="company-logo">
-            </div>
+            <img src="girasol-logo.png" alt="Girasol Energy" class="company-logo">
             <ul class="nav-links" id="navLinks">
-                <li><a href="#home">Home</a></li>
+                <li><a href="index.html">Home</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#technology">Technology</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -1164,8 +485,7 @@
     </nav>
     
     <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="hero-pattern"></div>
+    <section class="hero">
         <div class="hero-content">
             <img src="ai-energy-logo.png" alt="AI Energy Forecasting" class="ai-logo">
             <h1>AI-Powered Energy Forecasting System</h1>
@@ -1177,199 +497,52 @@
         </div>
     </section>
     
-    <!-- Services Overview Section -->
+    <!-- Services Section -->
     <section class="services" id="services">
         <div class="container">
             <h2 class="section-title">Comprehensive Energy Solutions</h2>
-            <p class="section-subtitle">Click on each service to explore detailed capabilities</p>
+            <p class="section-subtitle">Click on each service to explore detailed information</p>
             
             <div class="services-grid">
-                <!-- Generation Forecast Card -->
-                <div class="service-card fade-in" id="generation-card">
-                    <div class="service-header" onclick="toggleService('generation-card')">
-                        <img src="generation-icon.png" alt="Generation Forecast" class="service-icon">
-                        <div class="service-title-section">
-                            <h3>Energy Generation Forecast</h3>
-                            <p class="service-summary">AI-powered predictions for renewable energy output with advanced modeling</p>
-                        </div>
+                <a href="generation-forecast.html" class="service-card">
+                    <div class="service-icon">
+                        <img src="generation-icon.png" alt="Generation Forecast">
                     </div>
-                    <div class="service-details">
-                        <div class="service-details-content">
-                            <div class="capability-section">
-                                <h4>⚡ Core Capabilities (quarterly train):</h4>
-                                <ul class="capability-list">
-                                    <li>Predict renewable energy output (Solar, Wind, etc.)</li>
-                                    <li>Learn from historical generation patterns</li>
-                                    <li>Include power plant degradation & electrical defects</li>
-                                    <li>Capture azimuth & tilt angle impacts</li>
-                                    <li>Handle TSO curtailment orders on forecast plans (both full & partial %)</li>
-                                    <li>Automatic submission of daily generation plans to OCCTO</li>
-                                </ul>
-                            </div>
-                            <div class="capability-section">
-                                <h4>🔧 Optional capabilities:</h4>
-                                <ul class="capability-list">
-                                    <li>Apply imbalance optimization strategies on forecasting plans</li>
-                                    <li>Energy forecast monitoring & Forecast error analysis reports</li>
-                                    <li>Integrate self-consumption calculations (with or without demand forecast)</li>
-                                    <li>Monthly model retraining to include impact of:
-                                        <ul class="sub-list">
-                                            <li>Vegetation shading changes, Power plant parts defects</li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                    <h3>Energy Generation Forecast</h3>
+                    <p>AI-powered predictions for renewable energy output with advanced modeling capabilities</p>
+                </a>
                 
-                <!-- Demand Forecast Card -->
-                <div class="service-card fade-in" id="demand-card">
-                    <div class="service-header" onclick="toggleService('demand-card')">
-                        <img src="demand-icon.png" alt="Demand Forecast" class="service-icon">
-                        <div class="service-title-section">
-                            <h3>Power Demand Forecast</h3>
-                            <p class="service-summary">Site-specific and regional electricity consumption predictions</p>
-                        </div>
+                <a href="demand-forecast.html" class="service-card">
+                    <div class="service-icon">
+                        <img src="demand-icon.png" alt="Demand Forecast">
                     </div>
-                    <div class="service-details">
-                        <div class="service-details-content">
-                            <div class="capability-section">
-                                <h4>📊 Site Demand Forecast:</h4>
-                                <ul class="capability-list">
-                                    <li>Predict consumption of Buildings (residential, offices, banks, shopping centers, etc)</li>
-                                    <li>Predict consumption of factories, and group of users like Villages and combined consumptions</li>
-                                    <li>Includes seasonal & holiday & work patterns</li>
-                                    <li>Automatic daily demand forecast submission</li>
-                                </ul>
-                            </div>
-                            <div class="capability-section">
-                                <h4>🗾 Region Demand Forecast:</h4>
-                                <ul class="capability-list">
-                                    <li>Predicts all electricity regions of Japan:<br>
-                                        Tokyo, Hokkaido, Tohoku, Chubu,<br>
-                                        Hokuriku, Kansai, Chugoku,<br>
-                                        Shikoku, and Kyushu</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                    <h3>Power Demand Forecast</h3>
+                    <p>Site-specific and regional electricity consumption predictions across Japan</p>
+                </a>
                 
-                <!-- JEPX Price Forecast Card -->
-                <div class="service-card fade-in" id="jepx-card">
-                    <div class="service-header" onclick="toggleService('jepx-card')">
-                        <img src="jepx-icon.png" alt="JEPX Price" class="service-icon">
-                        <div class="service-title-section">
-                            <h3>JEPX Price Forecast</h3>
-                            <p class="service-summary">Market price predictions with 30-minute granularity</p>
-                        </div>
+                <a href="jepx-price.html" class="service-card">
+                    <div class="service-icon">
+                        <img src="jepx-icon.png" alt="JEPX Price">
                     </div>
-                    <div class="service-details">
-                        <div class="service-details-content">
-                            <div class="capability-section">
-                                <h4>💹 Region JEPX Price Forecast:</h4>
-                                <ul class="capability-list">
-                                    <li>Predicts JEPX price for all electricity regions of Japan:<br>
-                                        Tokyo, Hokkaido, Tohoku, Chubu,<br>
-                                        Hokuriku, Kansai, Chugoku,<br>
-                                        Shikoku, and Kyushu</li>
-                                    <li>Forecast granularity: 30-min</li>
-                                </ul>
-                            </div>
-                            <div class="capability-section">
-                                <h4>📈 Visualization:</h4>
-                                <ul class="capability-list">
-                                    <li>JEPX price time-history for all regions</li>
-                                    <li>Interactive charts and dashboards</li>
-                                    <li>Historical vs predicted price comparison</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                    <h3>JEPX Price Forecast</h3>
+                    <p>Market price predictions for all electricity regions with 30-minute granularity</p>
+                </a>
                 
-                <!-- Imbalance Price Forecast Card -->
-                <div class="service-card fade-in" id="imbalance-card">
-                    <div class="service-header" onclick="toggleService('imbalance-card')">
-                        <img src="imbalance-icon.png" alt="Imbalance Price" class="service-icon">
-                        <div class="service-title-section">
-                            <h3>Imbalance Price Forecast</h3>
-                            <p class="service-summary">Regional imbalance market price forecasting</p>
-                        </div>
+                <a href="imbalance-price.html" class="service-card">
+                    <div class="service-icon">
+                        <img src="imbalance-icon.png" alt="Imbalance Price">
                     </div>
-                    <div class="service-details">
-                        <div class="service-details-content">
-                            <div class="capability-section">
-                                <h4>🔀 Region Imbalance Price Forecast:</h4>
-                                <ul class="capability-list">
-                                    <li>Predicts electricity imbalance market price for all electricity regions of Japan:<br>
-                                        Tokyo, Hokkaido, Tohoku, Chubu,<br>
-                                        Hokuriku, Kansai, Chugoku,<br>
-                                        Shikoku, and Kyushu</li>
-                                    <li>Forecast granularity: 30-min</li>
-                                </ul>
-                            </div>
-                            <div class="capability-section">
-                                <h4>📊 Visualization:</h4>
-                                <ul class="capability-list">
-                                    <li>Imbalance price time-history for all regions</li>
-                                    <li>Real-time monitoring dashboard</li>
-                                    <li>Price volatility analysis</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                    <h3>Imbalance Price Forecast</h3>
+                    <p>Regional imbalance market price forecasting for risk management</p>
+                </a>
                 
-                <!-- Regional Analysis Card -->
-                <div class="service-card fade-in" id="regional-card">
-                    <div class="service-header" onclick="toggleService('regional-card')">
-                        <img src="regional-icon.png" alt="Regional Analysis" class="service-icon">
-                        <div class="service-title-section">
-                            <h3>Regional Analysis</h3>
-                            <p class="service-summary">Comprehensive market intelligence and investment advisory</p>
-                        </div>
+                <a href="regional-analysis.html" class="service-card">
+                    <div class="service-icon">
+                        <img src="regional-icon.png" alt="Regional Analysis">
                     </div>
-                    <div class="service-details">
-                        <div class="service-details-content">
-                            <div class="capability-section">
-                                <h4>🗾 Market Intelligence Reports:</h4>
-                                <ul class="capability-list">
-                                    <li>Regional JEPX market price analysis reports</li>
-                                    <li>Regional imbalance price analysis reports</li>
-                                    <li>Regional Electricity Supply-Demand analysis reports</li>
-                                    <li>Regional Curtailment reports</li>
-                                </ul>
-                            </div>
-                            <div class="capability-section">
-                                <h4>💰 Revenue Analysis Reports for Power Plants:</h4>
-                                <ul class="capability-list">
-                                    <li>FIP and various PPA revenue simulations</li>
-                                    <li>BESS plus FIP and various PPA revenue simulations</li>
-                                    <li>ROI projections</li>
-                                </ul>
-                            </div>
-                            <div class="capability-section">
-                                <h4>📍 Investment & Consulting Services:</h4>
-                                <ul class="capability-list">
-                                    <li>Data-driven consult on best location to buy and create power plants</li>
-                                    <li>Business model types selection (FIP/FIT/PPAs/Self-consumption) based on each power plant potential</li>
-                                </ul>
-                            </div>
-                            <div class="capability-section">
-                                <h4>🔧 Health and Performance Monitoring:</h4>
-                                <ul class="capability-list">
-                                    <li>Advanced PVHMS health monitoring analysis for power plants health & performance evaluations</li>
-                                </ul>
-                            </div>
-                            <div class="dashboard-image-container">
-                                <img src="regional-dashboard.png" alt="Regional Analysis Dashboard">
-                                <p>Comprehensive Analytics Dashboard - Real-time monitoring and analysis</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                    <h3>Regional Analysis</h3>
+                    <p>Comprehensive market intelligence and investment advisory services</p>
+                </a>
             </div>
         </div>
     </section>
@@ -1381,32 +554,32 @@
             <p class="section-subtitle">State-of-the-art AI and machine learning for accurate predictions</p>
             
             <div class="tech-features">
-                <div class="tech-item fade-in">
+                <div class="tech-item">
                     <h4>🤖 AI & Machine Learning</h4>
                     <p>Advanced neural networks with quarterly and monthly training cycles for optimal accuracy</p>
                 </div>
                 
-                <div class="tech-item fade-in">
+                <div class="tech-item">
                     <h4>📡 Real-time Integration</h4>
                     <p>Direct connection with JMA weather data, JEPX market data, and OCCTO systems</p>
                 </div>
                 
-                <div class="tech-item fade-in">
+                <div class="tech-item">
                     <h4>🔄 Continuous Learning</h4>
                     <p>Models that adapt to changing patterns, vegetation growth, and equipment degradation</p>
                 </div>
                 
-                <div class="tech-item fade-in">
+                <div class="tech-item">
                     <h4>📊 Advanced Analytics</h4>
                     <p>Comprehensive error analysis, performance monitoring, and optimization strategies</p>
                 </div>
                 
-                <div class="tech-item fade-in">
+                <div class="tech-item">
                     <h4>🔐 Enterprise Security</h4>
                     <p>Secure data handling with encrypted transmission and storage protocols</p>
                 </div>
                 
-                <div class="tech-item fade-in">
+                <div class="tech-item">
                     <h4>🌐 API Integration</h4>
                     <p>Easy integration with existing systems through our comprehensive API</p>
                 </div>
@@ -1430,7 +603,7 @@
             <p class="section-subtitle">Let's discuss how we can transform your energy management</p>
             
             <div class="contact-content">
-                <div class="contact-info fade-in-left">
+                <div class="contact-info">
                     <h3>Contact Information</h3>
                     <div class="contact-item">
                         <div class="contact-icon">📍</div>
@@ -1463,7 +636,7 @@
                     </div>
                 </div>
                 
-                <form class="contact-form fade-in-right">
+                <form class="contact-form">
                     <div class="form-group">
                         <label for="name">Your Name</label>
                         <input type="text" id="name" name="name" required>
@@ -1490,7 +663,7 @@
                     </div>
                     <div class="form-group">
                         <label for="message">Message</label>
-                        <textarea id="message" name="message" required placeholder="Tell us about your energy forecasting needs..."></textarea>
+                        <textarea id="message" name="message" rows="5" required></textarea>
                     </div>
                     <button type="submit" class="form-submit">Send Message</button>
                 </form>
@@ -1502,29 +675,27 @@
     <footer>
         <div class="footer-content">
             <div class="footer-section">
-                <img src="girasol-logo.png" alt="Girasol Energy" class="footer-logo">
-                <p class="footer-description">Leading AI-powered energy forecasting solutions for Japan's energy market. Optimizing renewable energy generation and consumption through advanced machine learning.</p>
+                <h4>Girasol Energy Inc.</h4>
+                <p>Leading AI-powered energy forecasting solutions for Japan's energy market.</p>
             </div>
             
             <div class="footer-section">
                 <h4>Services</h4>
                 <ul>
-                    <li><a href="#generation">Generation Forecast</a></li>
-                    <li><a href="#demand">Demand Forecast</a></li>
-                    <li><a href="#jepx">JEPX Price Forecast</a></li>
-                    <li><a href="#imbalance">Imbalance Price</a></li>
-                    <li><a href="#regional">Regional Analysis</a></li>
+                    <li><a href="generation-forecast.html">Generation Forecast</a></li>
+                    <li><a href="demand-forecast.html">Demand Forecast</a></li>
+                    <li><a href="jepx-price.html">JEPX Price Forecast</a></li>
+                    <li><a href="imbalance-price.html">Imbalance Price Forecast</a></li>
+                    <li><a href="regional-analysis.html">Regional Analysis</a></li>
                 </ul>
             </div>
             
             <div class="footer-section">
                 <h4>Company</h4>
                 <ul>
-                    <li><a href="#home">About Us</a></li>
+                    <li><a href="#">About Us</a></li>
                     <li><a href="#technology">Technology</a></li>
                     <li><a href="#contact">Contact</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Terms of Service</a></li>
                 </ul>
             </div>
             
@@ -1533,47 +704,25 @@
                 <ul>
                     <li><a href="#">LinkedIn</a></li>
                     <li><a href="#">Twitter</a></li>
-                    <li><a href="#">GitHub</a></li>
-                    <li><a href="#">Blog</a></li>
                 </ul>
             </div>
         </div>
         
-        <div class="container">
-            <div class="footer-bottom">
-                <p>&copy; 2025 Girasol Energy Inc. All rights reserved. | ヒラソル・エナジー株式会社</p>
-            </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Girasol Energy Inc. All rights reserved. | ヒラソル・エナジー株式会社</p>
         </div>
     </footer>
     
     <script>
-        // Hide loader when page is loaded
-        window.addEventListener('load', () => {
-            setTimeout(() => {
-                document.getElementById('loader').classList.add('hidden');
-            }, 500);
-        });
-        
         // Mobile menu toggle
         const mobileMenu = document.getElementById('mobileMenu');
         const navLinks = document.getElementById('navLinks');
         
         mobileMenu.addEventListener('click', () => {
             navLinks.classList.toggle('active');
-            mobileMenu.classList.toggle('active');
         });
         
-        // Navbar scroll effect
-        window.addEventListener('scroll', () => {
-            const navbar = document.getElementById('navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        });
-        
-        // Smooth scrolling for anchor links
+        // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -1583,97 +732,20 @@
                         behavior: 'smooth',
                         block: 'start'
                     });
-                    // Close mobile menu if open
                     navLinks.classList.remove('active');
-                    mobileMenu.classList.remove('active');
                 }
             });
         });
         
-        // Scroll to service function
-        function scrollToService(serviceId) {
-            const element = document.getElementById(serviceId);
-            if (element) {
-                element.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        }
-        
-        // Enhanced Intersection Observer for animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-        
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    // Add staggered animation for service cards
-                    if (entry.target.classList.contains('service-card')) {
-                        const cards = document.querySelectorAll('.service-card');
-                        cards.forEach((card, index) => {
-                            setTimeout(() => {
-                                card.classList.add('visible');
-                            }, index * 100);
-                        });
-                    }
-                }
-            });
-        }, observerOptions);
-        
-        // Observe all animated elements
-        document.querySelectorAll('.fade-in, .fade-in-left, .fade-in-right, .service-detail').forEach(el => {
-            observer.observe(el);
-        });
-        
-        // Form submission with animation
+        // Form submission
         const contactForm = document.querySelector('.contact-form');
         if (contactForm) {
             contactForm.addEventListener('submit', (e) => {
                 e.preventDefault();
-                const submitButton = contactForm.querySelector('.form-submit');
-                submitButton.textContent = 'Sending...';
-                submitButton.disabled = true;
-                
-                // Simulate form submission
-                setTimeout(() => {
-                    alert('Thank you for your interest in Girasol Energy! We will contact you soon.');
-                    contactForm.reset();
-                    submitButton.textContent = 'Send Message';
-                    submitButton.disabled = false;
-                }, 1500);
+                alert('Thank you for your interest in Girasol Energy! We will contact you soon.');
+                contactForm.reset();
             });
         }
-        
-        // Toggle service card expansion
-        function toggleService(cardId) {
-            const card = document.getElementById(cardId);
-            if (card) {
-                card.classList.toggle('expanded');
-                // Close other cards
-                document.querySelectorAll('.service-card').forEach(otherCard => {
-                    if (otherCard.id !== cardId) {
-                        otherCard.classList.remove('expanded');
-                    }
-                });
-                // Scroll to the card
-                setTimeout(() => {
-                    card.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }, 300);
-            }
-        }
-        
-        // Add parallax effect to hero section
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const hero = document.querySelector('.hero');
-            if (hero && scrolled < hero.offsetHeight) {
-                hero.style.transform = `translateY(${scrolled * 0.5}px)`;
-            }
-        });
     </script>
 </body>
 </html>
